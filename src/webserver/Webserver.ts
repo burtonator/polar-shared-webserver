@@ -102,6 +102,9 @@ export class Webserver implements WebRequestHandler {
     public static createApp(dir: PathStr,
                             rewrites: ReadonlyArray<Rewrite> = []): Express {
 
+        // FIXME: add a test to make sure the directory we're going to use actaully exists...
+        // FIXME: try this:https://www.npmjs.com/package/directory-tree
+
         const app = express();
 
         // handle rewrites FIRST so that we can send URLs to the right destination

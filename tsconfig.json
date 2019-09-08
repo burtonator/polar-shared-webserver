@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "lib": [
+      "es2015",
+      "dom",
+      "es2017.object",
+      "es2015.promise",
+      "es2016.array.include"
+    ],
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "alwaysStrict": true,
+    "listEmittedFiles": false,
+    "noImplicitReturns": true,
+    "removeComments": true,
+    "strictFunctionTypes": true,
+    "module": "commonjs",
+    "target": "es2015",
+    "outDir": ".",
+    "sourceMap": true,
+    "esModuleInterop": true,
+    "typeRoots": [
+      "node_modules/@types"
+    ]
+  },
+  "include": [
+    "."
+  ],
+  "exclude": []
+}

@@ -4,7 +4,7 @@ import { Express, RequestHandler } from 'express';
 import { ResourceRegistry } from './ResourceRegistry';
 import { Rewrite } from "./Rewrites";
 import { PathParams } from 'express-serve-static-core';
-import { PathStr } from '../../../polar-shared/src/util/Strings';
+import { PathStr } from 'polar-shared/src/util/Strings';
 export declare class Webserver implements WebRequestHandler {
     private readonly webserverConfig;
     private readonly fileRegistry;

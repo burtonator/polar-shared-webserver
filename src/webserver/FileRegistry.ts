@@ -1,6 +1,6 @@
-import {Preconditions} from '../../../polar-shared/src/Preconditions';
+import {Preconditions} from 'polar-shared/src/Preconditions';
 import {WebserverConfig} from './WebserverConfig';
-import {Hashcodes} from '../../../polar-shared/src/util/Hashcodes';
+import {Hashcodes} from 'polar-shared/src/util/Hashcodes';
 
 import path from 'path';
 

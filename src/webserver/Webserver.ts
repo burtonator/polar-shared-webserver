@@ -1,19 +1,19 @@
 import {WebserverConfig} from './WebserverConfig';
 import {FileRegistry} from './FileRegistry';
-import {Logger} from '../../../polar-shared/src/logger/Logger';
-import {Preconditions} from '../../../polar-shared/src/Preconditions';
-import {Paths} from '../../../polar-shared/src/util/Paths';
+import {Logger} from 'polar-shared/src/logger/Logger';
+import {Preconditions} from 'polar-shared/src/Preconditions';
+import {Paths} from 'polar-shared/src/util/Paths';
 
 import express, {Express, NextFunction, Request, RequestHandler, Response} from 'express';
 import serveStatic from 'serve-static';
 import {ResourceRegistry} from './ResourceRegistry';
 import * as http from "http";
 import * as https from "https";
-import {FilePaths} from '../../../polar-shared/src/util/FilePaths';
+import {FilePaths} from 'polar-shared/src/util/FilePaths';
 import {Rewrite, Rewrites} from "./Rewrites";
 import {PathToRegexps} from "./PathToRegexps";
 import {PathParams} from 'express-serve-static-core';
-import { PathStr } from '../../../polar-shared/src/util/Strings';
+import { PathStr } from 'polar-shared/src/util/Strings';
 
 const log = Logger.create();
 

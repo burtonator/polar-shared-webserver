@@ -1,4 +1,4 @@
-import {RegExps} from "../../../polar-shared/src/util/RegExps";
+import {RegExps} from "polar-shared/src/util/RegExps";
 
 export class PathToRegexps {
 

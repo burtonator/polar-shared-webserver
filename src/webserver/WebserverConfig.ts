@@ -1,4 +1,4 @@
-import {Preconditions} from '../../../polar-shared/src/Preconditions';
+import {Preconditions} from 'polar-shared/src/Preconditions';
 import {Rewrite} from "./Rewrites";
 
 export class WebserverConfig implements IWebserverConfig {

@@ -2,9 +2,9 @@ import {WebserverConfig} from './WebserverConfig';
 
 import {assert} from 'chai';
 import {FileRegistry} from './FileRegistry';
-import {Files} from '../../../polar-shared/src/util/Files';
-import {FilePaths} from '../../../polar-shared/src/util/FilePaths';
-import {assertJSON} from "../../../polar-shared/src/test/Assertions";
+import {Files} from 'polar-shared/src/util/Files';
+import {FilePaths} from 'polar-shared/src/util/FilePaths';
+import {assertJSON} from "polar-shared/src/test/Assertions";
 
 const webserverConfig = new WebserverConfig(".", 8080);
 

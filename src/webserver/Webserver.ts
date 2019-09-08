@@ -232,11 +232,19 @@ export class Webserver implements WebRequestHandler {
 
             for (const rewrite of rewrites) {
 
+                // TODO: make this debug..
+                console.log("Testing with rewrite: ", rewrite);
+
                 // TODO: it's probably not efficient to build this regex each
                 // time
                 const regex = PathToRegexps.pathToRegexp(rewrite.source);
 
-                if (Rewrites.matchesRegex(regex, url)) {
+                const matches = Rewrites.matchesRegex(regex, url);
+
+                // TODO: make this debug..
+                console.log(`Compiled as regexp: ${regex} matches: ${matches}`);
+
+                if (matches) {
                     return rewrite;
                 }
 
@@ -248,11 +256,16 @@ export class Webserver implements WebRequestHandler {
 
         app.use(function(req, res, next) {
 
+            // TODO: make this debug later on...
             log.info("Rewrite at url: " + req.url);
 
             const rewrite = computeRewrite(req.url);
 
+            // TODO: make this debug..
+            console.log(`URL ${req.url} rewritten as `, rewrite);
+
             if (rewrite) {
+                // TODO: make this debug later on...
                 req.url = rewrite.destination;
             }
 

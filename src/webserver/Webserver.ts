@@ -248,12 +248,13 @@ export class Webserver implements WebRequestHandler {
 
         app.use(function(req, res, next) {
 
+            log.info("Rewrite at url: " + req.url);
+
             const rewrite = computeRewrite(req.url);
 
             if (rewrite) {
                 req.url = rewrite.destination;
             }
-
 
             next();
 

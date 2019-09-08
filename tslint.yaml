@@ -12,15 +12,16 @@ rules:
   no-bitwise: true
   no-conditional-assignment: true
   no-consecutive-blank-lines: false
+  space-before-function-paren: false
   no-console:
     severity: warning
     options:
-      - debug
-      - info
-      - log
-      - time
-      - timeEnd
-      - trace
+    - debug
+    - info
+    - log
+    - time
+    - timeEnd
+    - trace
   # I think this is generally too strict for us for now.
   quotemark: false
 
@@ -36,8 +37,8 @@ rules:
   trailing-comma: false
 
   no-trailing-whitespace: false
-  #    options:
-  #      ignore-comments
+#    options:
+#      ignore-comments
 
   # can't enable this until we're on typescript everywhere
   no-var-requires: false
@@ -50,23 +51,23 @@ rules:
 
   radix: false
 
-  #  member-ordering:
-  #    options:
-  #      order:
-  #        - public-instance-field
-  #        - protected-instance-field
-  #        - private-instance-field
-  #        - public-instance-method
-  #        - protected-instance-method
-  #        - private-instance-method
-  #
-  #        - public-static-field
-  #        - protected-static-field
-  #        - private-static-field
-  #
-  #        - public-static-method
-  #        - protected-static-method
-  #        - private-static-method
+#  member-ordering:
+#    options:
+#      order:
+#        - public-instance-field
+#        - protected-instance-field
+#        - private-instance-field
+#        - public-instance-method
+#        - protected-instance-method
+#        - private-instance-method
+#
+#        - public-static-field
+#        - protected-static-field
+#        - private-static-field
+#
+#        - public-static-method
+#        - protected-static-method
+#        - private-static-method
 
   interface-name: false
 

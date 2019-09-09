@@ -50,6 +50,7 @@ export class Webserver implements WebRequestHandler {
 
         this.app = Webserver.createApp(this.webserverConfig.dir, this.webserverConfig.rewrites);
 
+        // FIXME: move this to the first and LAST aapp.use so we can see how it was actually handled?
         const requestLogger = (req: Request, res: Response, next: NextFunction) => {
             console.info(`${req.method} ${req.url}`);
             console.info(req.headers);
@@ -120,6 +121,9 @@ export class Webserver implements WebRequestHandler {
             }
 
         });
+
+        // FIXME: I think the problme now is that setting the path DOES NOT change the path for serveStatic inside
+        // the runtime environment on teh server?
 
         // TODO: add infinite caching if the files are woff2 web fonts...
         app.use(serveStatic(dir, {immutable: true}));

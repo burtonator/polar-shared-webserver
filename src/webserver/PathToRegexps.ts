@@ -20,3 +20,9 @@ export class PathToRegexps {
     }
 
 }
+
+/**
+ * A URL Path string similar to path-to-regexp which allows parts like /group/:group for easier
+ * management of the regular expressions.
+ */
+export type URLPathStr = string;

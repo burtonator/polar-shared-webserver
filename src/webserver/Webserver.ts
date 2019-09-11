@@ -248,8 +248,7 @@ export class Webserver implements WebRequestHandler {
 
                 const matches = Rewrites.matchesRegex(regex, url);
 
-                // TODO: make this debug..
-                console.log(`Compiled as regexp: ${regex} matches: ${matches}`);
+                console.debug(`Compiled as regexp: ${regex} matches: ${matches}`);
 
                 if (matches) {
                     return rewrite;
@@ -263,20 +262,31 @@ export class Webserver implements WebRequestHandler {
 
         app.use(function(req, res, next) {
 
-            // TODO: make this debug later on...
-            log.info("Rewrite at url: " + req.url);
+            const handler = async () => {
 
-            const rewrite = computeRewrite(req.url);
+                log.debug("Rewrite at url: " + req.url);
 
-            // TODO: make this debug..
-            console.log(`URL ${req.url} rewritten as `, rewrite);
+                const rewrite = computeRewrite(req.url);
 
-            if (rewrite) {
-                // TODO: make this debug later on...
-                req.url = rewrite.destination;
-            }
+                console.debug(`URL ${req.url} rewritten as `, rewrite);
 
-            next();
+                if (rewrite) {
+
+                    if (typeof rewrite.destination === 'string') {
+                        req.url = rewrite.destination;
+                    } else {
+                        const url = req.url;
+                        const content = await rewrite.destination(url);
+                        res.send(content);
+                    }
+
+                }
+
+                next();
+
+            };
+
+            handler().catch(err => console.error(err));
 
         });
 

@@ -1,3 +1,5 @@
+import {IDStr} from "polar-shared/src/util/Strings";
+
 export class Rewrites {
 
     public static matchesRegex(regex: URLRegularExpressionStr, path: PathStr): boolean {
@@ -16,9 +18,17 @@ export class Rewrites {
 }
 
 
+export type ContentGenerator = (url: string) => Promise<string>;
+
+export interface IDRewrite {
+    readonly id: IDStr;
+    readonly source: string;
+    readonly destination: string | ContentGenerator;
+}
+
 export interface Rewrite {
     readonly source: string;
-    readonly destination: string;
+    readonly destination: string | ContentGenerator;
 }
 
 export type PathStr = string;

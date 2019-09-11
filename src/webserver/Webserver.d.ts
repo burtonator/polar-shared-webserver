@@ -1,6 +1,6 @@
 import { WebserverConfig } from './WebserverConfig';
 import { FileRegistry } from './FileRegistry';
-import { Express, RequestHandler } from 'express';
+import express, { Express, RequestHandler } from 'express';
 import { ResourceRegistry } from './ResourceRegistry';
 import { Rewrite } from "./Rewrites";
 import { PathParams } from 'express-serve-static-core';
@@ -23,9 +23,10 @@ export declare class Webserver implements WebRequestHandler {
     private registerResourcesHandler;
     private static registerRewrites;
 }
+export declare type ExpressRequestHandler = (req: express.Request, res: express.Response) => void;
 export interface WebRequestHandler {
-    get(type: PathParams, ...handlers: RequestHandler[]): void;
-    options(type: PathParams, ...handlers: RequestHandler[]): void;
-    post(type: PathParams, ...handlers: RequestHandler[]): void;
-    put(type: PathParams, ...handlers: RequestHandler[]): void;
+    get(type: PathParams, ...handlers: ExpressRequestHandler[]): void;
+    options(type: PathParams, ...handlers: ExpressRequestHandler[]): void;
+    post(type: PathParams, ...handlers: ExpressRequestHandler[]): void;
+    put(type: PathParams, ...handlers: ExpressRequestHandler[]): void;
 }

@@ -238,8 +238,7 @@ export class Webserver implements WebRequestHandler {
 
             for (const rewrite of rewrites) {
 
-                // TODO: make this debug..
-                console.log("Testing with rewrite: ", rewrite);
+                console.debug("Testing with rewrite: ", rewrite);
 
                 // TODO: it's probably not efficient to build this regex each
                 // time

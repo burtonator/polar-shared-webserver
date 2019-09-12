@@ -262,7 +262,7 @@ export class Webserver implements WebRequestHandler {
 
             const handler = async () => {
 
-                log.debug("Rewrite at url: " + req.url);
+                // log.debug("Rewrite at url: " + req.url);
 
                 const rewrite = computeRewrite(req.url);
 

@@ -238,7 +238,7 @@ export class Webserver implements WebRequestHandler {
 
             for (const rewrite of rewrites) {
 
-                console.debug("Testing with rewrite: ", rewrite);
+                // console.debug("Testing with rewrite: ", rewrite);
 
                 // TODO: it's probably not efficient to build this regex each
                 // time
@@ -246,7 +246,7 @@ export class Webserver implements WebRequestHandler {
 
                 const matches = Rewrites.matchesRegex(regex, url);
 
-                console.debug(`Compiled as regexp: ${regex} matches: ${matches}`);
+                // console.debug(`Compiled as regexp: ${regex} matches: ${matches}`);
 
                 if (matches) {
                     return rewrite;
@@ -266,7 +266,7 @@ export class Webserver implements WebRequestHandler {
 
                 const rewrite = computeRewrite(req.url);
 
-                console.debug(`URL ${req.url} rewritten as `, rewrite);
+                // console.debug(`URL ${req.url} rewritten as `, rewrite);
 
                 if (rewrite) {
 

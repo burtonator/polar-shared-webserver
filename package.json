@@ -1,6 +1,6 @@
 {
   "name": "polar-shared-webserver",
-  "version": "1.32.14",
+  "version": "1.32.15",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -21,6 +21,6 @@
   "dependencies": {
     "@types/express": "^4.17.1",
     "express": "^4.17.1",
-    "polar-shared": "^1.32.14"
+    "polar-shared": "^1.32.15"
   }
 }

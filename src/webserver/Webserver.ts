@@ -10,7 +10,7 @@ import * as http from "http";
 import * as https from "https";
 import {FilePaths} from 'polar-shared/src/util/FilePaths';
 import {Rewrite, Rewrites} from "./Rewrites";
-import {PathToRegexps} from "./PathToRegexps";
+import {PathToRegexps} from "polar-shared/src/url/PathToRegexps";
 import {PathParams} from 'express-serve-static-core';
 import {PathStr} from 'polar-shared/src/util/Strings';
 

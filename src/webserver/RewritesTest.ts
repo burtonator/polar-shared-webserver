@@ -1,6 +1,6 @@
 import {assert} from 'chai';
 import {Rewrites} from "./Rewrites";
-import {PathToRegexps} from "./PathToRegexps";
+import {PathToRegexps} from "polar-shared/src/url/PathToRegexps";
 
 describe('RewritesTest', function() {
 

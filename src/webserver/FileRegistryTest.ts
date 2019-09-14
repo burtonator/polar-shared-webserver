@@ -4,7 +4,7 @@ import {assert} from 'chai';
 import {FileRegistry} from './FileRegistry';
 import {Files} from 'polar-shared/src/util/Files';
 import {FilePaths} from 'polar-shared/src/util/FilePaths';
-import {assertJSON} from "polar-shared/src/test/Assertions";
+import {assertJSON} from "polar-test/src/test/Assertions";
 
 const webserverConfig = new WebserverConfig(".", 8080);
 

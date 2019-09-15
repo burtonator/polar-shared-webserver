@@ -1,8 +1,9 @@
 import {IDStr} from "polar-shared/src/util/Strings";
+import {URLPathStr, URLRegularExpressionStr} from "polar-shared/src/url/PathToRegexps";
 
 export class Rewrites {
 
-    public static matchesRegex(regex: URLRegularExpressionStr, path: PathStr): boolean {
+    public static matchesRegex(regex: URLRegularExpressionStr, path: URLPathStr): boolean {
 
         const re = new RegExp(regex);
         const matches = re.exec(path);
@@ -30,11 +31,6 @@ export interface Rewrite {
     readonly source: string;
     readonly destination: string | ContentGenerator;
 }
-
-export type PathStr = string;
-
-export type RegexStr = string;
-export type URLRegularExpressionStr = RegexStr;
 
 export type Predicate<V, R> = (value: V) => R;
 

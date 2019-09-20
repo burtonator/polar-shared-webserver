@@ -27,10 +27,17 @@ export interface IDRewrite {
     readonly destination: string | ContentGenerator;
 }
 
-export interface Rewrite {
+export interface DestinationRewrite {
     readonly source: string;
     readonly destination: string | ContentGenerator;
 }
+
+export interface FunctionRewrite {
+    readonly source: string;
+    readonly function: string;
+}
+
+export type Rewrite = DestinationRewrite;
 
 export type Predicate<V, R> = (value: V) => R;
 
